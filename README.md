@@ -1,70 +1,258 @@
-# Getting Started with Create React App
+# 🎬 Movie_Recommender_System_Cineora
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts
+### Discover Movies You'll Love with AI-Powered Recommendations
 
-In the project directory, you can run:
+[![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react&logoColor=white)]()
+[![Node.js](https://img.shields.io/badge/Node.js-Backend-339933?style=for-the-badge&logo=node.js&logoColor=white)]()
+[![Flask](https://img.shields.io/badge/Flask-ML_Service-000000?style=for-the-badge&logo=flask&logoColor=white)]()
+[![Python](https://img.shields.io/badge/Python-ML-yellow?style=for-the-badge&logo=python)]()
+[![Vercel](https://img.shields.io/badge/Vercel-Frontend-black?style=for-the-badge&logo=vercel)]()
+[![Render](https://img.shields.io/badge/Render-Backend-46E3B7?style=for-the-badge)]()
 
-### `npm start`
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📖 About The Project
 
-### `npm test`
+Cineora is an AI-powered Movie Recommendation System that helps users discover movies similar to their favorite films.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The application leverages the **TMDB (The Movie Database) dataset** along with a Machine Learning recommendation engine based on **Content-Based Filtering** and **Cosine Similarity** to generate personalized movie suggestions.
 
-### `npm run build`
+The platform combines a modern React frontend, a Node.js backend, and a Flask-based ML service to deliver fast and accurate recommendations with movie posters and metadata.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ✨ Features
 
-### `npm run eject`
+- 🎬 Intelligent Movie Recommendations
+- 🔍 Search Movies Instantly
+- 🤖 Machine Learning-Based Suggestion Engine
+- 🖼️ Dynamic Movie Posters
+- ⚡ Fast API Responses
+- 📱 Responsive User Interface
+- ☁️ Cloud Deployment
+- 🎨 Modern and Interactive Design
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🛠️ Tech Stack
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Frontend
+- React.js
+- HTML5
+- CSS3
+- JavaScript
+- Axios
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Backend
+- Node.js
+- Express.js
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Machine Learning
+- Python
+- Flask
+- Pandas
+- NumPy
+- Scikit-Learn
+- Cosine Similarity Algorithm
 
 ### Deployment
+- Vercel (Frontend)
+- Render (Backend & ML Service)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🎞️ Dataset
 
-### `npm run build` fails to minify
+This project utilizes data from **TMDB (The Movie Database)**, one of the world's largest movie information databases.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Dataset information includes:
+
+- Movie Titles
+- Genres
+- Overview/Synopsis
+- Keywords
+- Cast Information
+- Crew Information
+- Movie Posters
+- Ratings and Metadata
+
+The dataset is processed and transformed into feature vectors that power the recommendation engine.
+
+---
+
+## 🧠 Recommendation Engine
+
+The recommendation system follows a Content-Based Filtering approach:
+
+### Workflow
+
+```text
+User Selects Movie
+        │
+        ▼
+React Frontend
+        │
+        ▼
+Node.js Backend
+        │
+        ▼
+Flask ML Service
+        │
+        ▼
+Cosine Similarity Algorithm
+        │
+        ▼
+Recommended Movies
+```
+
+### Machine Learning Pipeline
+
+- Data Collection
+- Data Cleaning
+- Feature Engineering
+- Vectorization
+- Similarity Matrix Generation
+- Recommendation Generation
+
+---
+
+## 📂 Project Structure
+
+```text
+Movie_Recommender_System_Cineora/
+│
+├── frontend/
+│   ├── src/
+│   ├── assets/
+│   ├── components/
+│   └── pages/
+│
+├── backend/
+│   ├── package.json
+│   └── index.js
+│
+├── ml-service/
+│   ├── Preprocess_Movie_Rec_Sys.py
+│   ├── app_movie_rec_sysd2.py
+│   ├── build.sh
+|   ├── test_model_movie_rec_sys.py
+|   ├── train_model_movie_rec_sys.py
+│   └── requirements.txt
+│
+└── README.md
+```
+
+---
+
+## 🚀 Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/Prateek-Dhar-Dwivedi/Movie_Recommender_System_Cineora_Frontend.git
+```
+
+### Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+### Backend Setup
+
+```bash
+cd backend
+npm install
+npm start
+```
+
+### ML Service Setup
+
+```bash
+pip install -r requirements.txt
+python app.py
+```
+
+---
+
+## 🎯 How It Works
+
+1. User enters a movie title.
+2. React frontend sends a request to the backend.
+3. Backend communicates with the Flask ML service.
+4. The ML model computes similarity scores.
+5. Recommended movies are returned.
+6. Posters and movie information are displayed to the user.
+
+---
+
+## 🚀 Live Demo
+
+🔗 **Frontend Demo**
+
+Add your deployed Vercel URL here:
+
+```text
+https://movie-recommender-system-cineora-fr.vercel.app/
+```
+
+---
+
+## 📈 Future Enhancements
+
+- User Authentication
+- Personalized User Profiles
+- Genre-Based Filtering
+- Trending Movies Section
+- Watchlist Feature
+- Rating & Review System
+- AI Chat Movie Assistant
+- Recommendation History
+
+---
+
+## 🎓 Learning Outcomes
+
+Through this project, I gained hands-on experience with:
+
+- Full-Stack Web Development
+- React.js Development
+- REST API Integration
+- Machine Learning Deployment
+- Flask API Development
+- Cloud Deployment using Vercel and Render
+- Recommendation Systems
+- Git & GitHub Collaboration
+
+---
+
+## 👨‍💻 Developer
+
+### Prateek Dhar Dwivedi
+
+- GitHub: https://github.com/Prateek-Dhar-Dwivedi
+
+Repository:
+
+https://github.com/Prateek-Dhar-Dwivedi/Movie_Recommender_System_Cineora_Frontend
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a **Star ⭐** on GitHub.
+
+---
+
+<div align="center">
+
+### 🎬 Bringing Intelligent Movie Discovery to Everyone
+
+Made with ❤️ using React, Node.js, Flask & Machine Learning
+
+</div>
