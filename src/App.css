@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #07152d;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  overflow-x: hidden;
+}
+
+.app {
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    #07152d 0%,
+    #0b1736 35%,
+    #111f45 100%
+  );
+}
+
+section {
+  padding: 90px 8%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #b8bfd6;
+  margin-bottom: 60px;
+}
+
+.glass {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #091325;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3f5fff;
+  border-radius: 20px;
+}
