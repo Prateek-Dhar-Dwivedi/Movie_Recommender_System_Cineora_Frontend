@@ -18,11 +18,6 @@ function ProjectInfo() {
   return (
     <section className="project-section" id="project">
       <div className="project-info">
-
-        <span className="project-badge">
-          🎬 Cineora - AI Powered Movie Recommendation System
-        </span>
-
         <h2>
           Discover Your Next Favorite Movie with
           Machine Learning

@@ -61,10 +61,14 @@ function Hero() {
       const serverError = error.response?.data?.error;
       if (serverError) {
         setErrorMsg(serverError);
+      } else if (error.response?.status === 429) {
+        setErrorMsg("Server is warming up from sleep. Please wait 10 seconds and try again!");
+      } else if (error.response?.status === 404) {
+        setErrorMsg(`"${targetMovie}" was not found in the TMDB movie dataset. Try another title!`);
       } else if (error.code === "ECONNABORTED" || error.message.includes("timeout")) {
         setErrorMsg("Server is waking up from sleep. Please wait a moment and try again!");
       } else {
-        setErrorMsg("Could not find movie or server is starting up. Please try again!");
+        setErrorMsg("Could not connect to recommendation engine. Please try again in a few seconds!");
       }
     } finally {
       setLoading(false);
@@ -74,10 +78,6 @@ function Hero() {
   return (
     <section className="hero" id="hero">
       <div className="hero-left">
-        <span className="project-badge">
-          🎬 Intelligent Movie Discovery
-        </span>
-
         <h1 className="hero-title">
           Welcome to
           <br />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Recommendations.css";
 
 const movies = [
@@ -77,95 +77,65 @@ const movies = [
 
 
 function MovieCard({ movie }) {
+  const [flipped, setFlipped] = useState(false);
+
+  const toggleFlip = () => {
+    setFlipped((prev) => !prev);
+  };
 
   return (
-
-    <div className="movie-card">
-
+    <div
+      className={`movie-card ${flipped ? "flipped" : ""}`}
+      onClick={toggleFlip}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          toggleFlip();
+        }
+      }}
+      tabIndex={0}
+      role="button"
+      aria-label={`${movie.title}, Rating ${movie.rating}, Genre ${movie.genre}. Click or tap to ${flipped ? "view poster" : "read synopsis"}`}
+    >
       <div className="movie-inner">
-
-
         {/* FRONT */}
-
         <div className="movie-front">
-
-          <img
-            src={movie.image}
-            alt={movie.title}
-          />
-
-
-          <div className="movie-content">
-
-            <h3>
-              {movie.title}
-            </h3>
-
-
-            <div className="movie-meta">
-
-              <span>
-                {movie.genre}
-              </span>
-
-
-              <span className="rating">
-                ⭐ {movie.rating}
-              </span>
-
+          <div className="movie-image">
+            <img
+              src={movie.image}
+              alt={movie.title}
+              loading="lazy"
+            />
+            <div className="flip-hint">
+              <span>Tap to flip</span>
             </div>
-
-
-            <p className="movie-year">
-              📅 {movie.year}
-            </p>
-
-
           </div>
 
-
+          <div className="movie-content">
+            <h3>{movie.title}</h3>
+            <div className="movie-meta">
+              <span className="genre-badge">{movie.genre}</span>
+              <span className="rating">⭐ {movie.rating}</span>
+            </div>
+            <p className="movie-year">📅 {movie.year}</p>
+          </div>
         </div>
-
-
-
 
         {/* BACK */}
-
         <div className="movie-back">
-
-
-          <h3>
-            {movie.title}
-          </h3>
-
-
-          <p>
-            {movie.description}
-          </p>
-
-
-          <span>
-            🎭 {movie.genre}
-          </span>
-
-
-          <span>
-            📅 {movie.year}
-          </span>
-
-
-          <span>
-            ⭐ {movie.rating}
-          </span>
-
-
+          <h3>{movie.title}</h3>
+          <p className="movie-synopsis">{movie.description}</p>
+          <div className="back-meta">
+            <span>🎭 {movie.genre}</span>
+            <span>📅 {movie.year}</span>
+            <span className="rating-badge">⭐ {movie.rating} / 10</span>
+          </div>
+          <div className="flip-hint-back">
+            <span>Tap to return</span>
+          </div>
         </div>
-
-
       </div>
-
     </div>
-
   );
 }
 

@@ -42,12 +42,10 @@ function Footer() {
           <h3>Follow Us</h3>
 
           <div className="socials">
-
-            <a href="https://www.facebook.com/p.dwivedi.2025" target="_blank" rel="noreferrer"><FaFacebookF /></a>
-            <a href="https://www.linkedin.com/in/prateek-dhar-dwivedi/" target="_blank" rel="noreferrer"><FaLinkedinIn /></a>
-            <a href="https://x.com/prateekdhar145" target="_blank" rel="noreferrer"><FaXTwitter /></a>
-            <a href="https://github.com/Prateek-Dhar-Dwivedi" target="_blank" rel="noreferrer"><FaGithub /></a>
-            
+            <a href="https://www.facebook.com/p.dwivedi.2025" target="_blank" rel="noreferrer" aria-label="Facebook Profile"><FaFacebookF /></a>
+            <a href="https://www.linkedin.com/in/prateek-dhar-dwivedi/" target="_blank" rel="noreferrer" aria-label="LinkedIn Profile"><FaLinkedinIn /></a>
+            <a href="https://x.com/prateekdhar145" target="_blank" rel="noreferrer" aria-label="X Twitter Profile"><FaXTwitter /></a>
+            <a href="https://github.com/Prateek-Dhar-Dwivedi" target="_blank" rel="noreferrer" aria-label="GitHub Profile"><FaGithub /></a>
           </div>
         </div>
 

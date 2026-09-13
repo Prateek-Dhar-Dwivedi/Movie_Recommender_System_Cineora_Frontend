@@ -1,42 +1,75 @@
+:root {
+  --primary: #4f73ff;
+  --primary-hover: #5f7fff;
+  --primary-glow: rgba(79, 115, 255, 0.4);
+  --primary-gradient: linear-gradient(135deg, #4f73ff, #7a5fff);
+  --accent-gold: #fbbf24;
+  --bg-dark-1: #07152d;
+  --bg-dark-2: #0b1736;
+  --bg-dark-3: #111f45;
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --bg-card-hover: rgba(255, 255, 255, 0.08);
+  --border-card: rgba(255, 255, 255, 0.08);
+  --border-card-hover: rgba(79, 115, 255, 0.4);
+  --text-primary: #ffffff;
+  --text-muted: #b8c2de;
+  --text-secondary: #8c9bbd;
+  --container-max: 1550px;
+  --nav-height: 80px;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
 }
 
 body {
-  background: #07152d;
-  color: white;
-  font-family: "Segoe UI", sans-serif;
+  background: var(--bg-dark-1);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   overflow-x: hidden;
+  min-width: 320px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .app {
   min-height: 100vh;
+  min-height: 100dvh;
   background: linear-gradient(
     180deg,
-    #07152d 0%,
-    #0b1736 35%,
-    #111f45 100%
+    var(--bg-dark-1) 0%,
+    var(--bg-dark-2) 35%,
+    var(--bg-dark-3) 100%
   );
+  display: flex;
+  flex-direction: column;
 }
 
 section {
-  padding: 90px 8%;
+  padding: clamp(50px, 7vw, 100px) clamp(16px, 5vw, 8%);
+  width: 100%;
+  position: relative;
 }
 
 .container {
   width: 100%;
-  max-width: 1400px;
-  margin: auto;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -44,6 +77,15 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 a {
@@ -53,85 +95,72 @@ a {
 
 .section-title {
   text-align: center;
-  font-size: 2.4rem;
-  margin-bottom: 20px;
+  font-size: clamp(1.8rem, 3.8vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: clamp(10px, 2vw, 18px);
+  color: var(--text-primary);
 }
 
 .section-subtitle {
   text-align: center;
-  color: #b8bfd6;
-  margin-bottom: 60px;
+  color: var(--text-muted);
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+  max-width: 650px;
+  margin: 0 auto clamp(35px, 5vw, 60px);
+  line-height: 1.6;
 }
 
 .glass {
-  background: rgba(255,255,255,0.06);
+  background: var(--bg-card);
   backdrop-filter: blur(15px);
-  border: 1px solid rgba(255,255,255,0.1);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid var(--border-card);
 }
 
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #091325;
+  background: var(--bg-dark-1);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3f5fff;
+  background: #2a3d70;
   border-radius: 20px;
 }
 
-/*For mobile phones*/
-@media (max-width: 768px) {
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
 
-  .hero {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 2rem 1.5rem;
-    gap: 2rem;
+/* Big Screens / Ultra-Wide 4K Screens */
+@media (min-width: 1800px) {
+  :root {
+    --container-max: 1700px;
   }
 
-  .hero-content {
-    width: 100%;
-    order: 2;
+  .section-title {
+    font-size: 3.2rem;
   }
 
-  .hero-image {
-    width: 100%;
-    order: 1;
+  .section-subtitle {
+    font-size: 1.25rem;
+    max-width: 750px;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  section {
+    padding: clamp(40px, 6vw, 60px) 16px;
   }
 
-}
-
-@media (max-width:768px){
-
-.hero-title{
-    font-size:2.8rem;
-    line-height:1.1;
-}
-
-}
-
-@media (max-width:768px){
-
-.poster{
-    position:relative;
-    width:180px;
-    margin:auto;
-}
-
-.poster-2{
-    margin-top:-70px;
-    margin-left:100px;
-}
-
-}
-
-.search-box{
-    width:100%;
-    max-width:450px;
-    margin:auto;
+  :root {
+    --nav-height: 70px;
+  }
 }
 
